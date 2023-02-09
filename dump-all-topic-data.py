@@ -22,7 +22,7 @@ mymessages=[]
 problems=[]
 def runit(topicname,groupid):
     global mymessages, problems
-    bootstrap_servers = ['172.16.160.121:29092']
+    bootstrap_servers = ['192.168.1.2:29092']
     print(topicname + " " + groupid)
     consumer = KafkaConsumer (topicname, group_id =groupid,bootstrap_servers =bootstrap_servers, auto_offset_reset='earliest',max_poll_records=10000)
     generator = showdata(consumer)
